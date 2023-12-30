@@ -54,3 +54,5 @@ jobs:
         run: php artisan migrate
       - name: Setup Passport
         run: php artisan passport:install
+      - name: Scrape data from sources
+        run: php artisan app:scrape
