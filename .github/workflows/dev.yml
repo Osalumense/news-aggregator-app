@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy-main:
-    name: Deploy lendsqr assessment to main
+    name: Deploy Blog API to main
     runs-on: ubuntu-latest
 
     steps:
@@ -47,4 +47,11 @@ jobs:
 
           EOF
       - name: Install dependencies on app
-        run: cd backend && docker compose up
+        run: |
+            cd backend && docker-compose up -d \
+                -e DB_DATABASE=${{ secrets.DB_NAME }} \
+                -e DB_USERNAME=${{ secrets.DB_USER }} \
+                -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} \
+                -e DB_PORT=${{ secrets.DB_PORT }} \
+                -e DB_HOST=${{ secrets.DB_HOST }} \
+            
