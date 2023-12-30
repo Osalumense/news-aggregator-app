@@ -47,12 +47,12 @@ jobs:
 
           EOF
       - name: Install dependencies on app
-        run: composer install
+        run: cd backend && composer install
       - name: Generate application key
-        run: php artisan key:generate
+        run: cd backend && php artisan key:generate
       - name: Run migration
-        run: php artisan migrate
+        run: cd backend && php artisan migrate
       - name: Setup Passport
-        run: php artisan passport:install
+        run: cd backend && php artisan passport:install
       - name: Scrape data from sources
-        run: php artisan app:scrape
+        run: cd backend && php artisan app:scrape
