@@ -19,9 +19,9 @@ COPY . .
 RUN composer install
 
 # Generate an application key (for example, you can run migrations here)
-RUN cd backend && php artisan key:generate
-RUN cd backend && php artisan migrate
-RUN cd backend && php artisan app:scrape
+RUN php artisan key:generate
+RUN php artisan migrate
+RUN php artisan app:scrape
 
 # Expose the port where the PHP-FPM server listens (default is 9000)
 EXPOSE 8000
