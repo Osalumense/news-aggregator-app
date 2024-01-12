@@ -4,6 +4,9 @@
 This is a blog but unlike regular blogs it uses web scraping to source for articles from the following sources (NewsAPI, The Guardian and New York Times) and displays in a clean UI to users. In addition, it allows a user to register and select his/her preference of news source, location and even writer. It's a robust application that allows you to read news from around the world at your fingertips. 
 The frontend was designed using React while the backend was built with Laravel and are both dockerized.
 
+## Homepage
+![Homepage](./images/homepage.png)
+
 ## Features
 - Create Account: A user can register on the platform to ahve a more personalized news feed
 
